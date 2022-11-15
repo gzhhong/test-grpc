@@ -3,8 +3,7 @@ module test-grpc
 go 1.17
 
 require (
-	github.com/asim/go-micro/plugins/server/grpc/v4 v4.7.0
-	go-micro.dev/v4 v4.6.0
+	go-micro.dev/v4 v4.5.0
 	google.golang.org/protobuf v1.27.1
 )
 
@@ -41,8 +40,7 @@ require (
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20210510120138-977fb7262007 // indirect
 	golang.org/x/text v0.3.6 // indirect
-	google.golang.org/genproto v0.0.0-20211020151524-b7c3a969101a // indirect
-	google.golang.org/grpc v1.42.0 // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

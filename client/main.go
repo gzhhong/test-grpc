@@ -18,21 +18,21 @@ func main () {
 	fmt.Println("Micro service started, with name: "+serviceName)
 
 	helloService := proto.NewHelloService("HelloServer", ms.Client())
-	respWithoutTime, err := helloService.SayHelloWithoutTime(context.Background(), &proto.HelloRequestWithoutTime{Name: "James"})
+	respWithoutTime, err := helloService.SayHelloWithoutTime(context.Background(), &proto.HelloRequestWithoutTime{Name: "James say hello without time"})
 	if err != nil {
 		fmt.Errorf("Error happened with detail %v", err)
 	}
 
-	fmt.Printf("The response greeting is %v", respWithoutTime.Greeting)
+	fmt.Printf("The response greeting is %v \n", respWithoutTime.Greeting)
 	// fmt.Printf("The response time is %v", time.Unix(resp.End.Seconds, int64(resp.End.Nanos)).Format(time.RFC3339))
 	fmt.Println("Success the test on SayHelloWithoutTime!")
 
-	respWithTime, err := helloService.SayHelloWithTime(context.Background(), &proto.HelloRequestWithTime{Name: "James", Start: timestamp.Now()})
+	respWithTime, err := helloService.SayHelloWithTime(context.Background(), &proto.HelloRequestWithTime{Name: "James say hello with time", Start: timestamp.Now()})
 	if err != nil {
 		fmt.Errorf("Error happened with detail %v", err)   
 	}
 
-	fmt.Printf("The response greeting is %v", respWithTime.Greeting)
+	fmt.Printf("The response greeting is %v \n", respWithTime.Greeting)
 	// fmt.Printf("The response time is %v", time.Unix(resp.End.Seconds, int64(resp.End.Nanos)).Format(time.RFC3339))
 	fmt.Println("Success the test on SayHelloWithTime!")
 }
