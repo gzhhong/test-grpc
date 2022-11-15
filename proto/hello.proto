@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package="/proto";
+
+package Social;
+
+import "google/protobuf/timestamp.proto";
+
+service Hello {
+    rpc SayHelloWithoutTime(HelloRequestWithoutTime) returns (HelloResponseWithoutTime);
+    rpc SayHelloWithTime(HelloRequestWithTime) returns (HelloResponseWithTime);
+}
+
+message HelloRequestWithoutTime {
+    // @inject_tag: json:"Name" validate:"required"
+    string Name = 1;
+}
+
+message HelloResponseWithoutTime {
+    // @inject_tag: json:"greeting" validate:"required"
+    string Greeting = 1;
+}
+
+message HelloRequestWithTime {
+    // @inject_tag: json:"Name" validate:"required"
+    string Name = 1;
+    // @inject_tag: json:"start" validate:"required"
+    google.protobuf.Timestamp start = 2;
+}
+
+message HelloResponseWithTime {
+    // @inject_tag: json:"greeting" validate:"required"
+    string Greeting = 1;
+    // @inject_tag: json:"end" validate:"required"
+    google.protobuf.Timestamp end = 2;
+}
